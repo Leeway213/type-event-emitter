@@ -2,13 +2,13 @@ language: node_js
 node_js:
 - '12'
 script: npm run lint && npm test
-before_deploy: npm i -g makeshift && makeshift -s @bcoe -r registry.npmjs.org && npm run build && cd dist
+before_deploy: npm run build && cd dist
 deploy:
   provider: npm
   email: leewayzhang@outlook.com
   skip_cleanup: true
   api_key:
-    secure: "$NPM_TOKEN"
+    secure: fi+9Aqp27MJJivlRf/lgokdS8OHkGteZ44UtDjHtZpdkbjQU4G2wDVmaRKygiknWn/ugQzr3x5lJ0G3txYQHkokrEwrwEKdJFDTjRZ+O1w0Y3cy//d8IB2GHvbLEJq8NXyrjYOmBCRPH1L2OW0CKdVeURsWaAXZH76yccVDM3r4VSLmXAkpBfh3daFNgs1t2gd61zguC9XIli+CmYNW4y6+5sNfQjB/YJOp7yfqQ1JGQ3FaNJIWiB9oGYK4S9Uqi+vLHlQgUop50FRn//RL2TBe2OW2Fp2pfIbeuXzniziQ6CTo9dWgNWGAGZ6Lmv+eRlg1oA/W2KGp/i+pV6id8/A6IeOT5yFq5WJr5euEf6ry02VzUldpnHifU1E+6W+AnZsLR7++0ygUAwtwg95UB29h3+2UIsD4UgJXbOTBcyfFqd18Cpkb8i5QBxQX381MRXll/nj6n4FP6wLG0yEti6rAQ1UCYxii6lhkq6xkWQ3mIO3yRlzTEnhizNJRKP2pPnwTUY5A3tvhw71ISNrhdp6FWokgH5MlghvCcFxeoJm6TGo1LRkREQ+XvEa+niGGq7IFZmTDphyxr0kY7KE5w4rwXjbi8poVtdOgNwV0LGz2SLyULZx4e7PuxEBXgPRUy7aEVNv8vXQKyzYlqvEPjZPxIU1YFuuEPqBRLA7tockc=
   on:
     tags: true
     branch: master
