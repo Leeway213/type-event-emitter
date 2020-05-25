@@ -2,7 +2,7 @@ language: node_js
 node_js:
 - '12'
 script: npm run lint && npm test
-before_deploy: npm run build && cd dist
+before_deploy: npm i -g makeshift && makeshift -s @bcoe -r registry.npmjs.org && npm run build && cd dist
 deploy:
   provider: npm
   email: leewayzhang@outlook.com
