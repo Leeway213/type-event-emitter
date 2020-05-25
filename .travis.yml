@@ -8,7 +8,7 @@ deploy:
   email: leewayzhang@outlook.com
   skip_cleanup: true
   api_key:
-    secure: $NPM_TOKEN
+    secure: "$NPM_TOKEN"
   on:
     tags: true
     branch: master
